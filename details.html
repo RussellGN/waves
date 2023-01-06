@@ -1,0 +1,1075 @@
+<!-- -
+		display details of 
+		artists, 
+		albums, 
+		tracks and 
+		playlists under one template
+   -give links to stream
+   -show related items -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Waves - wireframe</title>
+		<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./assets/bootstrap-icons/bootstrap-icons.css" />
+		<style>
+			.scrollable {
+				transition: all 0.2s;
+			}
+			.w-fit {
+				width: fit-content;
+			}
+			.h-fit {
+				height: fit-content;
+			}
+			.c-rounded-1 {
+				border-radius: 10px;
+			}
+			.c-rounded-2 {
+				border-radius: 20px;
+			}
+			.c-rounded-3 {
+				border-radius: 30px;
+			}
+			.border-darker {
+				border-color: #18191a !important;
+			}
+			.bg-darker {
+				background-color: #18191a !important;
+			}
+			.color-darker {
+				color: #18191a !important;
+			}
+		</style>
+		<script defer src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script defer src="./assets/custom.js"></script>
+	</head>
+
+	<body
+		style="
+			background: linear-gradient(
+					to bottom right,
+					rgba(8, 0, 34, 0.795),
+					rgba(0, 27, 58, 0.42)
+				),
+				url('./cover.webp') fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		"
+		class="bg-dark text-light"
+	>
+		<header
+			class="shadow d-flex align-items-center justify-content-between container-lg bg-darker c-rounded-3 p-4 my-4 sticky-top"
+		>
+			<a
+				href="./index.html"
+				class="h3 text-decoration-none text-light d-flex align-items-center"
+			>
+				Waves<i class="bi bi-soundwave ms-2 text-primary fs-1"></i>
+			</a>
+			<form id='search-form' class="d-flex align-items-center">
+				<input
+					placeholder="Search music..."
+					type="search"
+					style="outline: none"
+					class="border-0 px-4 py-3 text-light shadow rounded-pill border-3 bg-dark"
+				/>
+				<i class="bi fs-4 text-primary mx-2 bi-moon-stars-fill"></i>
+			</form>
+		</header>
+
+		<main class="container">
+			<div class="p-5 c-rounded-2 my-4 position-relative">
+				<div class="row justify-content-center">
+					<div class="col-lg-3">
+						<div
+							style="
+								top: 120px;
+								min-height: 60vh;
+								background-color: rgba(0, 0, 0, 0.42);
+							"
+							class="p-3 c-rounded-1 sticky-top"
+						>
+							<div class="mb-3 d-flex align-items-center">
+								<img
+									src="./cover.webp"
+									class="c-rounded-1 me-2 shadow"
+									style="width: 6rem; height: 6rem; object-fit: cover"
+								/>
+								<div class="d-flex justify-content-center align-items-center">
+									<button
+										data-bs-toggle="tooltip"
+										data-bs-placement="top"
+										title="Stream on Spotify"
+										class="btn-sm btn text-success"
+										type="button"
+									>
+										<i class="bi bi-spotify fs-4"></i>
+									</button>
+									<button
+										data-bs-toggle="tooltip"
+										data-bs-placement="top"
+										title="Stream on YouTube"
+										class="btn-sm btn text-danger"
+										type="button"
+									>
+										<i class="bi bi-youtube fs-4"></i>
+									</button>
+								</div>
+							</div>
+
+							<h3>
+								Lorem ipsum dolor
+								<small style="font-size: 60%" class="text-primary small"
+									>2022</small
+								>
+							</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+								inventore laudantium nam corrupti iusto quisquam laboriosam quae
+								temporibus aspernatur culpa.
+							</p>
+						</div>
+					</div>
+
+					<div class="col-lg">
+						<div
+							style="background-color: rgba(0, 0, 0, 0.42)"
+							class="p-3 c-rounded-1 mb-5"
+						>
+							<div class="">
+								<div class="pb-2">
+									<div class="d-flex align-items-center justify-content-between">
+										<h3>Popular tracks</h3>
+									</div>
+								</div>
+
+								<div class="">
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							style="background-color: rgba(0, 0, 0, 0.42)"
+							class="p-3 c-rounded-1 mb-5"
+						>
+							<div class="">
+								<div class="pb-2">
+									<div class="d-flex align-items-center justify-content-between">
+										<h3>Tracklist</h3>
+									</div>
+								</div>
+
+								<div class="">
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+
+									<div class="d-flex align-items-start p-3">
+										<img
+											src="./cover.webp"
+											style="width: 3rem; height: 3rem; object-fit: cover"
+											class="rounded me-3 shadow"
+										/>
+										<div class="flex-fill">
+											<div>Lore misum</div>
+											<small style="font-size: 0.7rem"
+												><i>2022 - Ipsum dolor ii</i></small
+											>
+										</div>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on Spotify"
+											class="btn-sm btn text-success"
+											type="button"
+										>
+											<i class="bi bi-spotify fs-4"></i>
+										</button>
+										<button
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											title="Stream on YouTube"
+											class="btn-sm btn text-danger"
+											type="button"
+										>
+											<i class="bi bi-youtube fs-4"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div
+							style="background-color: rgba(0, 0, 0, 0.42)"
+							class="p-3 c-rounded-1 mb-5"
+						>
+							<div class="">
+								<div class="pb-2">
+									<div class="d-flex align-items-center justify-content-between">
+										<h3>Albums</h3>
+										<a
+											name=""
+											id=""
+											class="btn-sm btn btn-primary rounded-pill px-3 py-1"
+											href="#"
+											role="button"
+											>Load more</a
+										>
+									</div>
+								</div>
+
+								<div class="row row-cols-auto justify-content-evenly">
+									<div class="col p-1">
+										<div class="">
+											<a href="./details.html">
+												<img
+													src="./cover.webp"
+													class="rounded"
+													style="
+														width: 10rem;
+														height: 10rem;
+														object-fit: cover;
+													"
+													alt=""
+											/></a>
+										</div>
+									</div>
+
+									<div class="col p-1">
+										<div class="">
+											<a href="./details.html">
+												<img
+													src="./cover.webp"
+													class="rounded"
+													style="
+														width: 10rem;
+														height: 10rem;
+														object-fit: cover;
+													"
+													alt=""
+											/></a>
+										</div>
+									</div>
+
+									<div class="col p-1">
+										<div class="">
+											<a href="./details.html">
+												<img
+													src="./cover.webp"
+													class="rounded"
+													style="
+														width: 10rem;
+														height: 10rem;
+														object-fit: cover;
+													"
+													alt=""
+											/></a>
+										</div>
+									</div>
+
+									<div class="col p-1">
+										<div class="">
+											<a href="./details.html">
+												<img
+													src="./cover.webp"
+													class="rounded"
+													style="
+														width: 10rem;
+														height: 10rem;
+														object-fit: cover;
+													"
+													alt=""
+											/></a>
+										</div>
+									</div>
+
+									<div class="col p-1">
+										<div class="">
+											<a href="./details.html">
+												<img
+													src="./cover.webp"
+													class="rounded"
+													style="
+														width: 10rem;
+														height: 10rem;
+														object-fit: cover;
+													"
+													alt=""
+											/></a>
+										</div>
+									</div>
+
+									<div class="col p-1">
+										<div class="">
+											<a href="./details.html">
+												<img
+													src="./cover.webp"
+													class="rounded"
+													style="
+														width: 10rem;
+														height: 10rem;
+														object-fit: cover;
+													"
+													alt=""
+											/></a>
+										</div>
+									</div>
+
+									<div class="col p-1">
+										<div class="">
+											<a href="./details.html">
+												<img
+													src="./cover.webp"
+													class="rounded"
+													style="
+														width: 10rem;
+														height: 10rem;
+														object-fit: cover;
+													"
+													alt=""
+											/></a>
+										</div>
+									</div>
+
+									<div class="col p-1">
+										<div class="">
+											<a href="./details.html">
+												<img
+													src="./cover.webp"
+													class="rounded"
+													style="
+														width: 10rem;
+														height: 10rem;
+														object-fit: cover;
+													"
+													alt=""
+											/></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div
+							style="background-color: rgba(0, 0, 0, 0.42)"
+							class="p-3 c-rounded-1 mb-5"
+						>
+							<div class="">
+								<div class="pb-2">
+									<div class="d-flex align-items-center justify-content-between">
+										<h3>Featured playlists</h3>
+										<a
+											name=""
+											id=""
+											class="btn-sm btn btn-primary rounded-pill px-3 py-1"
+											href="#"
+											role="button"
+											>Load more</a
+										>
+									</div>
+								</div>
+
+								<div class="row justify-content-center align-items-center">
+									<div class="col-6 p-1">
+										<div class="border c-rounded-1 border-3 border-dark">
+											<div class="c-rounded-2" style="height: 250px">
+												<a href="./details.html">
+													<img
+														src="./cover.webp"
+														class="c-rounded-1"
+														style="
+															width: 100%;
+															height: 100%;
+															object-fit: cover;
+														"
+														alt=""
+												/></a>
+											</div>
+										</div>
+									</div>
+									<div class="col-3 p-1">
+										<div class="border c-rounded-1 border-3 border-dark">
+											<div class="c-rounded-2" style="height: 250px">
+												<a href="./details.html">
+													<img
+														src="./cover.webp"
+														class="c-rounded-1"
+														style="
+															width: 100%;
+															height: 100%;
+															object-fit: cover;
+														"
+														alt=""
+												/></a>
+											</div>
+										</div>
+									</div>
+									<div class="col-3 p-1">
+										<div class="border c-rounded-1 border-3 border-dark">
+											<div class="c-rounded-2" style="height: 250px">
+												<a href="./details.html">
+													<img
+														src="./cover.webp"
+														class="c-rounded-1"
+														style="
+															width: 100%;
+															height: 100%;
+															object-fit: cover;
+														"
+														alt=""
+												/></a>
+											</div>
+										</div>
+									</div>
+									<div class="col-4 p-1">
+										<div class="border c-rounded-1 border-3 border-dark">
+											<div class="c-rounded-2" style="height: 250px">
+												<a href="./details.html">
+													<img
+														src="./cover.webp"
+														class="c-rounded-1"
+														style="
+															width: 100%;
+															height: 100%;
+															object-fit: cover;
+														"
+														alt=""
+												/></a>
+											</div>
+										</div>
+									</div>
+									<div class="col-8 p-1">
+										<div class="border c-rounded-1 border-3 border-dark">
+											<div class="c-rounded-2" style="height: 250px">
+												<a href="./details.html">
+													<img
+														src="./cover.webp"
+														class="c-rounded-1"
+														style="
+															width: 100%;
+															height: 100%;
+															object-fit: cover;
+														"
+														alt=""
+												/></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div
+							style="background-color: rgba(0, 0, 0, 0.42)"
+							class="p-3 c-rounded-1 mb-5"
+						>
+							<div class="">
+								<div class="pb-2">
+									<div class="d-flex align-items-center justify-content-between">
+										<h3>Featured playlists</h3>
+										<a
+											name=""
+											id=""
+											class="btn-sm btn btn-primary rounded-pill px-3 py-1"
+											href="#"
+											role="button"
+											>Load more</a
+										>
+									</div>
+								</div>
+
+								<div class="d-flex align-items-center">
+									<i
+										class="bi text-light bi-caret-left fs-2"
+										style="cursor: pointer"
+									></i>
+
+									<div
+										class="row row-cols-4 flex-nowrap flex-fill align-items-center"
+									>
+										<div class="col p-2">
+											<div
+												class="d-flex flex-column justify-content-center align-items-center"
+											>
+												<div
+													class="rounded-circle bg-darker"
+													style="height: 5rem; width: 5rem"
+												>
+													<a href="./details.html">
+														<img
+															src="./cover.webp"
+															class="rounded-circle"
+															style="
+																width: 100%;
+																height: 100%;
+																object-fit: cover;
+															"
+															alt=""
+													/></a>
+												</div>
+												<a
+													href="./details.html"
+													class="text-decoration-none p-2 m-0"
+													>Lorem ipsum</a
+												>
+											</div>
+										</div>
+
+										<div class="col p-2">
+											<div
+												class="d-flex flex-column justify-content-center align-items-center"
+											>
+												<div
+													class="rounded-circle bg-darker"
+													style="height: 5rem; width: 5rem"
+												>
+													<a href="./details.html">
+														<img
+															src="./cover.webp"
+															class="rounded-circle"
+															style="
+																width: 100%;
+																height: 100%;
+																object-fit: cover;
+															"
+															alt=""
+													/></a>
+												</div>
+												<a
+													href="./details.html"
+													class="text-decoration-none p-2 m-0"
+													>Lorem ipsum</a
+												>
+											</div>
+										</div>
+
+										<div class="col p-2">
+											<div
+												class="d-flex flex-column justify-content-center align-items-center"
+											>
+												<div
+													class="rounded-circle bg-darker"
+													style="height: 5rem; width: 5rem"
+												>
+													<a href="./details.html">
+														<img
+															src="./cover.webp"
+															class="rounded-circle"
+															style="
+																width: 100%;
+																height: 100%;
+																object-fit: cover;
+															"
+															alt=""
+													/></a>
+												</div>
+												<a
+													href="./details.html"
+													class="text-decoration-none p-2 m-0"
+													>Lorem ipsum</a
+												>
+											</div>
+										</div>
+
+										<div class="col p-2">
+											<div
+												class="d-flex flex-column justify-content-center align-items-center"
+											>
+												<div
+													class="rounded-circle bg-darker"
+													style="height: 5rem; width: 5rem"
+												>
+													<a href="./details.html">
+														<img
+															src="./cover.webp"
+															class="rounded-circle"
+															style="
+																width: 100%;
+																height: 100%;
+																object-fit: cover;
+															"
+															alt=""
+													/></a>
+												</div>
+												<a
+													href="./details.html"
+													class="text-decoration-none p-2 m-0"
+													>Lorem ipsum</a
+												>
+											</div>
+										</div>
+									</div>
+
+									<i class="bi bi-caret-right fs-2" style="cursor: pointer"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 
+			<div class="p-4 my-4">
+				<div class="pb-2">
+					<div class="d-flex align-items-center justify-content-between">
+						<h2>Lorem ipsum</h2>
+						<a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
+					</div>
+				</div>
+
+				<div class="d-flex align-items-center">
+					<i class="bi text-light bi-caret-left fs-2" style="cursor: pointer"></i>
+
+					<div class="row row-cols-4 flex-nowrap flex-fill align-items-center">
+						<div class="col p-2">
+							<div
+								class="d-flex flex-column justify-content-center align-items-center"
+							>
+								<div
+									class="rounded-circle bg-darker"
+									style="height: 10rem; width: 10rem"
+								>
+									<img
+										src="./cover.webp"
+										class="rounded-circle"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+									/>
+								</div>
+								<p class="p-2 m-0">Lorem ipsum</p>
+							</div>
+						</div>
+
+						<div class="col p-2">
+							<div
+								class="d-flex flex-column justify-content-center align-items-center"
+							>
+								<div
+									class="rounded-circle bg-darker"
+									style="height: 10rem; width: 10rem"
+								>
+									<img
+										src="./cover.webp"
+										class="rounded-circle"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+									/>
+								</div>
+								<p class="p-2 m-0">Lorem ipsum</p>
+							</div>
+						</div>
+
+						<div class="col p-2">
+							<div
+								class="d-flex flex-column justify-content-center align-items-center"
+							>
+								<div
+									class="rounded-circle bg-darker"
+									style="height: 10rem; width: 10rem"
+								>
+									<img
+										src="./cover.webp"
+										class="rounded-circle"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+									/>
+								</div>
+								<p class="p-2 m-0">Lorem ipsum</p>
+							</div>
+						</div>
+
+						<div class="col p-2">
+							<div
+								class="d-flex flex-column justify-content-center align-items-center"
+							>
+								<div
+									class="rounded-circle bg-darker"
+									style="height: 10rem; width: 10rem"
+								>
+									<img
+										src="./cover.webp"
+										class="rounded-circle"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+									/>
+								</div>
+								<p class="p-2 m-0">Lorem ipsum</p>
+							</div>
+						</div>
+					</div>
+
+					<i class="bi bi-caret-right fs-2" style="cursor: pointer"></i>
+				</div>
+			</div>
+
+			<div class="bg-darker p-4 c-rounded-2 my-4">
+				<div class="pb-2">
+					<div class="d-flex align-items-center justify-content-between">
+						<h2>Lorem ipsum</h2>
+						<a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
+					</div>
+				</div>
+
+				<div class="row justify-content-center align-items-center">
+					<div class="col-6 p-1">
+						<div class="border c-rounded-1 border-3 border-dark">
+							<div class="c-rounded-2" style="height: 250px">
+								<a href="./details.html">
+									<img
+										src="./cover.webp"
+										class="c-rounded-1"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+								/></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-3 p-1">
+						<div class="border c-rounded-1 border-3 border-dark">
+							<div class="c-rounded-2" style="height: 250px">
+								<a href="./details.html">
+									<img
+										src="./cover.webp"
+										class="c-rounded-1"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+								/></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-3 p-1">
+						<div class="border c-rounded-1 border-3 border-dark">
+							<div class="c-rounded-2" style="height: 250px">
+								<a href="./details.html">
+									<img
+										src="./cover.webp"
+										class="c-rounded-1"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+								/></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-4 p-1">
+						<div class="border c-rounded-1 border-3 border-dark">
+							<div class="c-rounded-2" style="height: 250px">
+								<a href="./details.html">
+									<img
+										src="./cover.webp"
+										class="c-rounded-1"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+								/></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-8 p-1">
+						<div class="border c-rounded-1 border-3 border-dark">
+							<div class="c-rounded-2" style="height: 250px">
+								<a href="./details.html">
+									<img
+										src="./cover.webp"
+										class="c-rounded-1"
+										style="width: 100%; height: 100%; object-fit: cover"
+										alt=""
+								/></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</main>
+
+		<footer class="my-5">
+			<p class="text-center">RussellGN<i class="bi bi-github ms-2 fs-5"></i></p>
+		</footer>
+	</body>
+</html>
